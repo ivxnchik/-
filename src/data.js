@@ -59,5 +59,5 @@ const raw = [
  ['ГАЗ','Volga 3110',1997,2008,280000,'седан','ЗМЗ-406','2.3','бензин','МКПП','задний',11,.58,'цепь, карбюратор','коррозия днища'],
 ];
 
-export const models = raw.map((r,i) => ({ id:`m${i+1}`, brand:r[0], model:r[1], from:r[2], to:r[3], base:r[4], body:r[5], engine:r[6], volume:r[7], fuel:r[8], transmission:r[9], drive:r[10], consumption:r[11], liquidity:r[12], issues:r[13], bodyIssues:r[14] }));
+export const models = raw.map((r,i) => ({ id:`m${i+1}`, brand:r[0], model:r[1], from:r[2], to:r[3], generation:`${r[2]}–${r[3]}`, modification:`${r[6]} ${r[7]} ${r[8]}`, base:r[4], marketRange:{min:Math.round(r[4]*.72/10000)*10000,max:Math.round(r[4]*1.32/10000)*10000}, body:r[5], engine:r[6], volume:r[7], fuel:r[8], transmission:r[9], drive:r[10], consumption:r[11], liquidity:r[12], issues:r[13], bodyIssues:r[14] }));
 export const names = ['Александр','Сергей','Дмитрий','Андрей','Илья','Максим','Елена','Ольга','Виктор'];
